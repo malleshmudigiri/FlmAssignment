@@ -1,0 +1,181 @@
+[
+  {
+    "id": 1,
+    "name": "TechNova Solutions",
+    "location": "Hyderabad",
+    "industry": "IT Services",
+    "description": "A leading software development and cloud solutions provider helping enterprises scale.",
+    "founded": 2012
+  },
+  {
+    "id": 2,
+    "name": "GreenLeaf Agro Farms",
+    "location": "Bangalore",
+    "industry": "Agriculture",
+    "description": "Organic farming company focusing on chemical-free crop production.",
+    "founded": 2005
+  },
+  {
+    "id": 3,
+    "name": "SkyHigh Constructions",
+    "location": "Mumbai",
+    "industry": "Construction",
+    "description": "Specialized in large-scale residential and commercial construction projects.",
+    "founded": 1998
+  },
+  {
+    "id": 4,
+    "name": "FinEdge Capital",
+    "location": "Delhi",
+    "industry": "Finance",
+    "description": "A financial consulting firm offering investment and portfolio management services.",
+    "founded": 2010
+  },
+  {
+    "id": 5,
+    "name": "PixelCraft Studios",
+    "location": "Chennai",
+    "industry": "Design",
+    "description": "Creative design agency delivering branding, animation, and digital media solutions.",
+    "founded": 2016
+  },
+  {
+    "id": 6,
+    "name": "NextGen Robotics",
+    "location": "Pune",
+    "industry": "Robotics",
+    "description": "Innovating automation and AI-driven robotics for industrial operations.",
+    "founded": 2018
+  },
+
+  {
+    "id": 7,
+    "name": "MedicoPlus Pharma",
+    "location": "Hyderabad",
+    "industry": "Healthcare",
+    "description": "Pharmaceutical manufacturer producing affordable generic medicines.",
+    "founded": 2007
+  },
+  {
+    "id": 8,
+    "name": "CodeWorks Infotech",
+    "location": "Bangalore",
+    "industry": "Software",
+    "description": "Full-stack development company delivering web and mobile applications.",
+    "founded": 2014
+  },
+  {
+    "id": 9,
+    "name": "Star Logistics",
+    "location": "Delhi",
+    "industry": "Logistics",
+    "description": "India’s fastest growing logistics partner for eCommerce and retail companies.",
+    "founded": 2011
+  },
+  {
+    "id": 10,
+    "name": "SmartRetail Mart",
+    "location": "Mumbai",
+    "industry": "Retail",
+    "description": "Omni-channel retail chain offering both online and in-store shopping experience.",
+    "founded": 2019
+  },
+  {
+    "id": 11,
+    "name": "FutureAuto Motors",
+    "location": "Chennai",
+    "industry": "Automobile",
+    "description": "Manufacturer of next-generation EV two-wheelers and smart motor parts.",
+    "founded": 2017
+  },
+  {
+    "id": 12,
+    "name": "InnoTech Labs",
+    "location": "Pune",
+    "industry": "Research",
+    "description": "Research and development company working on biotech and nano-technology innovations.",
+    "founded": 2013
+  },
+
+  {
+    "id": 13,
+    "name": "BlueOcean Shipping",
+    "location": "Kolkata",
+    "industry": "Shipping",
+    "description": "International cargo shipping and freight forwarding company.",
+    "founded": 2002
+  },
+  {
+    "id": 14,
+    "name": "EduSmart Academy",
+    "location": "Hyderabad",
+    "industry": "Education",
+    "description": "EdTech platform offering online learning programs for students and professionals.",
+    "founded": 2015
+  },
+  {
+    "id": 15,
+    "name": "EcoEnergy Systems",
+    "location": "Bangalore",
+    "industry": "Energy",
+    "description": "Renewable energy startup providing solar and wind power solutions.",
+    "founded": 2020
+  },
+  {
+    "id": 16,
+    "name": "DigitalHive Marketing",
+    "location": "Delhi",
+    "industry": "Marketing",
+    "description": "Digital marketing agency specializing in SEO, ads, and brand growth.",
+    "founded": 2018
+  },
+  {
+    "id": 17,
+    "name": "PrimeFoods Pvt Ltd",
+    "location": "Chennai",
+    "industry": "Food Processing",
+    "description": "Manufacturer of packaged foods and ready-to-eat products.",
+    "founded": 2009
+  },
+  {
+    "id": 18,
+    "name": "AutoMatrix Tech",
+    "location": "Pune",
+    "industry": "Automation",
+    "description": "Automation solutions company helping factories improve productivity.",
+    "founded": 2011
+  },
+
+  {
+    "id": 19,
+    "name": "BrightFuture Finance",
+    "location": "Mumbai",
+    "industry": "Finance",
+    "description": "Finance company offering loans, investment plans, and advisory.",
+    "founded": 2008
+  },
+  {
+    "id": 20,
+    "name": "UrbanScape Interiors",
+    "location": "Hyderabad",
+    "industry": "Interior Design",
+    "description": "Interior design studio crafting modern home and office spaces.",
+    "founded": 2016
+  },
+  {
+    "id": 21,
+    "name": "ProSports Arena",
+    "location": "Bangalore",
+    "industry": "Sports",
+    "description": "Sports complex offering training, tournaments, and fitness activities.",
+    "founded": 2021
+  },
+  {
+    "id": 22,
+    "name": "Zentra Electronics",
+    "location": "Delhi",
+    "industry": "Electronics",
+    "description": "Electronics manufacturer producing smart gadgets and IoT devices.",
+    "founded": 2013
+  }
+]
