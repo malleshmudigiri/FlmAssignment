@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-
 import { useNavigate } from "react-router-dom";
-
 
 const CompaniesPage = () => {
   const [companies, setCompanies] = useState([]);
@@ -9,6 +7,7 @@ const CompaniesPage = () => {
 
   const [search, setSearch] = useState("");
   const [locationFilter, setLocationFilter] = useState("");
+  const [industryFilter, setIndustryFilter] = useState("");
 
   const [page, setPage] = useState(1);
   const pageSize = 6;
@@ -18,39 +17,32 @@ const CompaniesPage = () => {
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+    const loadData = async () => {
+      try {
+        setLoading(true);
+        setError("");
 
-
-
-useEffect(() => {
-  const loadData = async () => {
-    try {
-      setLoading(true);
-      setError("");
-
-      const response = await fetch("/companies.json");
-
-      if (!response.ok) {
-        throw new Error("Failed to fetch companies");
-      }
-
+        const response = await fetch("/companies.json");
+        if (!response.ok) {
+          throw new Error("Failed to fetch companies");
+        }
 
         let data = await response.json();
-     
 
-      setCompanies(data);
-      setFilteredList(data);
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
-    }
-  };
+        setCompanies(data);
+        setFilteredList(data);
+      } catch (err) {
+        setError(err.message);
+      } finally {
+        setLoading(false);
+      }
+    };
 
-  loadData();
-}, []);
+    loadData();
+  }, []);
 
 
-  // Apply filters
   useEffect(() => {
     let data = [...companies];
 
@@ -64,16 +56,20 @@ useEffect(() => {
       data = data.filter((item) => item.location === locationFilter);
     }
 
+    if (industryFilter !== "") {
+      data = data.filter((item) => item.industry === industryFilter);
+    }
+
     setFilteredList(data);
     setPage(1);
-  }, [search, locationFilter, companies]);
-
+  }, [search, locationFilter, industryFilter, companies]);
 
   const startIndex = (page - 1) * pageSize;
   const pageData = filteredList.slice(startIndex, startIndex + pageSize);
   const totalPages = Math.ceil(filteredList.length / pageSize);
 
   const uniqueLocations = [...new Set(companies.map((c) => c.location))];
+  const uniqueIndustries = [...new Set(companies.map((c) => c.industry))];
 
   if (loading) return <p className="text-center mt-10">Loading...</p>;
   if (error) return <p className="text-center text-red-500 mt-10">{error}</p>;
@@ -84,7 +80,7 @@ useEffect(() => {
         Companies Directory
       </h1>
 
-      {/* Filters */}
+
       <div className="flex flex-wrap items-center gap-4 mb-6">
         <input
           type="text"
@@ -106,9 +102,22 @@ useEffect(() => {
             </option>
           ))}
         </select>
+
+    
+        <select
+          value={industryFilter}
+          onChange={(e) => setIndustryFilter(e.target.value)}
+          className="border px-3 py-2 rounded-md"
+        >
+          <option value="">All Industries</option>
+          {uniqueIndustries.map((ind) => (
+            <option key={ind} value={ind}>
+              {ind}
+            </option>
+          ))}
+        </select>
       </div>
 
-     
       <div className="flex flex-wrap justify-center items-center gap-5">
         {pageData.map((item) => (
           <div
@@ -126,17 +135,20 @@ useEffect(() => {
             </p>
 
             <div className="flex items-center justify-between text-sm mt-3">
-              <span className="px-3 py-1 bg-gray-200 rounded-md">ID: {item.id}</span>
+              <span className="px-3 py-1 bg-gray-200 rounded-md">
+                ID: {item.id}
+              </span>
+
               <button
-               onClick={() => navigate(`/company/${item.id}`)}
-              className="px-3 py-1 bg-gray-900 text-white rounded-md">
+                onClick={() => navigate(`/company/${item.id}`)}
+                className="px-3 py-1 bg-gray-900 text-white rounded-md"
+              >
                 View
               </button>
             </div>
           </div>
         ))}
       </div>
-
 
       <div className="flex items-center justify-center gap-4 mt-8">
         <button
