@@ -10,7 +10,7 @@ const CompaniesPage = () => {
   const [industryFilter, setIndustryFilter] = useState("");
 
   const [page, setPage] = useState(1);
-  const pageSize = 6;
+  const pageSize = 8;
 
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState("");
@@ -71,7 +71,7 @@ const CompaniesPage = () => {
   const uniqueLocations = [...new Set(companies.map((c) => c.location))];
   const uniqueIndustries = [...new Set(companies.map((c) => c.industry))];
 
-  if (loading) return <p className="text-center mt-10">Loading...</p>;
+  if (loading) return <p className="text-center mt-[50vh]">Loading...</p>;
   if (error) return <p className="text-center text-red-500 mt-10">{error}</p>;
 
   return (
@@ -119,10 +119,11 @@ const CompaniesPage = () => {
       </div>
 
       <div className="flex flex-wrap justify-center items-center gap-5">
+      
         {pageData.map((item) => (
           <div
             key={item.id}
-            className="bg-white shadow-md rounded-lg p-5 border hover:shadow-lg transition"
+            className="bg-white shadow-md rounded-lg p-5 border hover:shadow-lg min-w-[250px]"
           >
             <h2 className="text-xl font-semibold mb-2">{item.name}</h2>
 
@@ -148,6 +149,13 @@ const CompaniesPage = () => {
             </div>
           </div>
         ))}
+
+       {pageData.length === 0 && (
+  <p className="text-center text-gray-500 text-xl font-semibold">
+    No Data Found
+  </p>
+)}
+
       </div>
 
       <div className="flex items-center justify-center gap-4 mt-8">

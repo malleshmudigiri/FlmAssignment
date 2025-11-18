@@ -26,7 +26,7 @@ const CompanyDetails = () => {
     fetchDetails();
   }, [id]);
 
-  if (loading) return <p className="text-center mt-10">Loading...</p>;
+  if (loading) return <p className="text-center mt-[50vh]">Loading...</p>;
   if (error) return <p className="text-center text-red-500 mt-10">{error}</p>;
   if (!company) return <p className="text-center mt-10">Company not found</p>;
 
